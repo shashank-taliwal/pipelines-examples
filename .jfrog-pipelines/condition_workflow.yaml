@@ -41,13 +41,7 @@ pipelines:
           allowFailure: true
           inputSteps:
           - name: step1
-            status:
-              - success
-              - error
-              - failure
-              - timeout
         execution:
           onExecute:
             - echo 'failure'
-            - exit 1  
 
