@@ -1,0 +1,34 @@
+resources:
+  - name: myGitRepo
+    type: GitRepo
+    configuration: 
+      # gitProvider: Integration name
+      # path: {{.Values.myRepo.path}}
+      branches:
+        include: master
+
+pipelines:
+   - name: Matrix_Single_Pipeline
+    steps:     
+      - name: matrix_example
+        type: Matrix
+        stepMode: Bash
+        configuration:
+          inputResources:
+            - name: CompletedBuildInfo
+        stepletMultipliers:
+          environmentVariables:             # Sets of environment variables for steplets
+            - animal:    dog                # - Set 1
+              mineral:   copper
+              vegetable: carrot
+            - animal:    goat               # - Set 2
+              mineral:   iron
+              vegetable: broccoli
+            - animal:    lizard             # - Set 3
+              mineral:   lead          
+              
+        execution:
+          onExecute:
+            - echo "Executing matrix step on ${steplet_id}"
+            - echo "Variation animal = ${animal}, mineral = ${mineral}, vegetable = ${vegetable}"
+
