@@ -9,7 +9,7 @@ resources:
 
 pipelines:
    - name: Matrix_Single_Pipeline
-      steps:     
+     steps:     
       - name: matrix_example
         type: Matrix
         stepMode: Bash
