@@ -5,7 +5,7 @@ resources:
       gitProvider: shashankGithub
       path: shashank-taliwal/pipelines-examples
       branches:
-        include: master
+        include: main
 
 pipelines:
    - name: Matrix_Single_Pipeline
