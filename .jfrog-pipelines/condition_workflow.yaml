@@ -37,6 +37,7 @@ pipelines:
       - name: step2
         type: Bash
         configuration:
+          allowFailure: true
           inputSteps:
           - name: step1
             status:
@@ -47,5 +48,5 @@ pipelines:
         execution:
           onExecute:
             - echo 'failure'
-            - exit 0   
+            - exit 1  
 
