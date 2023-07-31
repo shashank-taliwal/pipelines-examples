@@ -25,5 +25,27 @@ pipelines:
         execution:
           onExecute:
             - echo "Success"
-      
+  - name: PIPE_9455_Workflow_03
+    steps:
+      - name: step1
+        type: Bash
+        configuration:
+          allowFailure: true
+        execution:
+          onExecute:
+            - echo 'step1'
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+          - name: step1
+            status:
+              - success
+              - error
+              - failure
+              - timeout
+        execution:
+          onExecute:
+            - echo 'failure'
+            - exit 1    
 
