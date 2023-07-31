@@ -15,7 +15,7 @@ pipelines:
         stepMode: Bash
         configuration:
           inputResources:
-            - name: CompletedBuildInfo
+            - name: shashank_github_repo
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
