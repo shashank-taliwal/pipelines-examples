@@ -30,10 +30,11 @@ pipelines:
       - name: step1
         type: Bash
         configuration:
-          allowFailure: true
+          allowFailure: false
         execution:
           onExecute:
             - echo 'step1'
+            - exit 1
       - name: step2
         type: Bash
         configuration:
