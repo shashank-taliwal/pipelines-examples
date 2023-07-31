@@ -1,9 +1,9 @@
 resources:
-  - name: myGitRepo
+  - name: shashank_github_repo
     type: GitRepo
     configuration: 
-      # gitProvider: Integration name
-      # path: {{.Values.myRepo.path}}
+      gitProvider: shashankGithub
+      path: shashank-taliwal/pipelines-examples
       branches:
         include: master
 
