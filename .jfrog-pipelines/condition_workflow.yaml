@@ -16,4 +16,14 @@ pipelines:
         execution:
           onExecute:
             - echo "Success"
+      - name: step3
+        type: Bash
+        configuration: 
+          condition: 'var1==2'
+          inputSteps: 
+            - name: step1
+        execution:
+          onExecute:
+            - echo "Success"
+      
 
