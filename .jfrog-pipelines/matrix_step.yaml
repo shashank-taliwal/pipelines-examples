@@ -1,21 +1,8 @@
-resources:
-  - name: shashank_github_repo
-    type: GitRepo
-    configuration: 
-      gitProvider: shashankGithub
-      path: shashank-taliwal/pipelines-examples
-      branches:
-        include: main
-
 pipelines:
    - name: Matrix_Single_Pipeline
      steps:     
       - name: matrix_example
         type: Matrix
-        stepMode: Bash
-        configuration:
-          inputResources:
-            - name: shashank_github_repo
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
