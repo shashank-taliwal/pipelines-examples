@@ -1,13 +1,20 @@
 pipelines:
   - name: testing_conditional_variables
+    configuration:
+      environmentVariables:
+        readOnly:
+          pipeline_env:
+            allowCustom: true
+            default: 4
     steps:
       - name: step1
         type: Bash
         configuration:
           environmentVariables:
-            shashank_env:
+            step_env:
               allowCustom: true
               default: 2
+          condition: step_env=='3'
         execution:
           onExecute:
             - echo $shashank_env
