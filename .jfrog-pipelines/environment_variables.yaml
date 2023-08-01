@@ -21,8 +21,8 @@ pipelines:
         execution:
           onExecute:
             - echo "Success"
-      - name:step3
-        type:Bash
+      - name: step3
+        type: Bash
         configuration:
           inputSteps: 
             - name:step1
