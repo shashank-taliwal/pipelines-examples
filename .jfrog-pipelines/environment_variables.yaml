@@ -1,0 +1,14 @@
+pipelines:
+  - name: testing_conditional_variables
+    steps:
+      - name: step1
+        type: Bash
+        configuration:
+          environmentVariables:
+            shashank_env:
+              default: 1
+              allowCustom: true
+        execution:
+          onExecute:
+            - echo shashank_env
+
