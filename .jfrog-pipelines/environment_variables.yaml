@@ -6,6 +6,7 @@ pipelines:
         configuration:
           environmentVariables:
             shashank_env:
+              default: 1
               allowCustom: true
         execution:
           onExecute:
