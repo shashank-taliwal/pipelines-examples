@@ -21,4 +21,12 @@ pipelines:
         execution:
           onExecute:
             - echo "Success"
+      - name: step3
+        type: Bash
+        configuration: 
+          condition: 'shashank_env==3'
+        execution:
+          onExecute:
+            - echo "step3 done"
+            - echo $shashank_env
 
