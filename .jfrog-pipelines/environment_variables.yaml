@@ -10,5 +10,5 @@ pipelines:
               allowCustom: true
         execution:
           onExecute:
-            - echo shashank_env
+            - echo $shashank_env
 
