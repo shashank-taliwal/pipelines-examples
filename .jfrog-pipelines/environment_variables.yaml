@@ -12,22 +12,4 @@ pipelines:
           onExecute:
             - echo $shashank_env
             - add_run_variables "key_a=1"
-      - name: step2
-        type: Bash
-        configuration:
-          condition: 'key_a==1'
-          inputSteps: 
-            - name: step1
-        execution:
-          onExecute:
-            - echo "Success"
-      - name: step3
-        type: Bash
-        configuration:
-          inputSteps: 
-            - name: step1
-        execution:
-          onExecute:
-            - echo $key_a
-            - echo "Success"
 
