@@ -5,10 +5,9 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            readOnly:
-              shashank_env:
-                allowCustom: true
-                default: 2
+            shashank_env:
+              allowCustom: true
+              default: 2
         execution:
           onExecute:
             - echo $shashank_env
