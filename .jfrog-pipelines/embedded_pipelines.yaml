@@ -6,6 +6,8 @@ pipelines:
         configuration:
           pipelineName: scanner_pipeline
           stepName: scan_it
+          integrations:
+            - name: myPlatformToken
           environmentVariables:
             scan_target:
               default: "hello-world"
