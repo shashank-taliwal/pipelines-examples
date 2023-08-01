@@ -5,9 +5,10 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            shashank_env:
-              default: 2
-              allowCustom: true
+            readOnly:
+              shashank_env:
+                default: 2
+                allowCustom: true
         execution:
           onExecute:
             - echo $shashank_env
@@ -28,5 +29,5 @@ pipelines:
             - name: step1
         execution:
           onExecute:
-            - echo '$key_a'
+            - echo $key_a
 
