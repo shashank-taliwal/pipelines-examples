@@ -17,7 +17,7 @@ pipelines:
           condition: step_env=='3'
         execution:
           onExecute:
-            - echo $shashank_env
+            - echo $pipeline_env
             - add_run_variables "key_a=1"
       - name: step2
         type: Bash
@@ -31,11 +31,11 @@ pipelines:
       - name: step3
         type: Bash
         configuration: 
-          condition: 'shashank_env==3'
+          condition: 'pipeline_env==3'
           inputSteps: 
             - name: step1
         execution:
           onExecute:
             - echo "step3 done"
-            - echo $shashank_env
+            - echo $pipeline_env
 
