@@ -7,8 +7,8 @@ pipelines:
           environmentVariables:
             readOnly:
               shashank_env:
-                default: 2
                 allowCustom: true
+                default: 2
         execution:
           onExecute:
             - echo $shashank_env
