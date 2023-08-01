@@ -11,6 +11,7 @@ pipelines:
         execution:
           onExecute:
             - echo $shashank_env
+            - add_run_variables 'shashank_env=$shashank_env'
       - name: step2
         type: Bash
         configuration:
