@@ -28,5 +28,5 @@ pipelines:
             - name: step1
         execution:
           onExecute:
-            - echo $key
+            - echo '$key'
 
