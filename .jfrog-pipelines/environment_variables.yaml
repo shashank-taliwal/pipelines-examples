@@ -14,7 +14,6 @@ pipelines:
       - name: step2
         type: Bash
         configuration:
-          condition: 'shashank_env==2'
           input_steps: 
             - name: step1
         execution:
