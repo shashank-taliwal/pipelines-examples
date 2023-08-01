@@ -30,4 +30,5 @@ pipelines:
         execution:
           onExecute:
             - echo $key_a
+            - echo "Success"
 
