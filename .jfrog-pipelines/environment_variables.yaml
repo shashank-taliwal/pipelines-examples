@@ -11,10 +11,11 @@ pipelines:
         execution:
           onExecute:
             - echo $shashank_env
+            - add_run_variables key=1
       - name: step2
         type: Bash
         configuration:
-          condition: 'shashank_env==2'
+          condition: 'key==1'
           inputSteps: 
             - name: step1
         execution:
