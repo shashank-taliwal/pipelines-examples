@@ -1,0 +1,18 @@
+pipelines:
+  - name: connectedSteps
+    steps:
+      - name: step1
+        type: Bash
+        configuration:
+          nodePool: nodeA
+        execution:
+          onExecute:
+           - echo "Step1"
+      - name: step2
+        type: Bash
+        configuration:
+          nodePool: nodeB
+          inputSteps: step1
+        execution:
+          onExecute:
+           - echo "Step2" 
