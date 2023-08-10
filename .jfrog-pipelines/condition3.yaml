@@ -3,18 +3,18 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-          shashank_env:
-            default: 2
-            allowCustom: true
+          - shashank_env:
+              default: 2
+              allowCustom: true
     steps:
       - name: step1
         type: Bash
         configuration:
           environmentVariables:
             readOnly:
-              shashank_env: 
-                default: 3
-                allowCustom: true
+              - shashank_env: 
+                  default: 3
+                  allowCustom: true
           condition: 'shashank_env == 2'
         execution:
             onExecute:
