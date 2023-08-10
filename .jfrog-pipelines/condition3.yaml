@@ -14,7 +14,7 @@ pipelines:
               shashank_env: 
                 default: 3
                 allowCustom: true
-          condition: 'shashank_env == 2'
+          condition: shashank_env == 2
         execution:
             onExecute:
               - echo 'step1'
