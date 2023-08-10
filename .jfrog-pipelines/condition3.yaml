@@ -14,7 +14,6 @@ pipelines:
               shashank_env_2: 
                 default: 3
                 allowCustom: true
-          condition: shashank_env_1 == 2
         execution:
             onExecute:
               - echo 'step1'
@@ -23,6 +22,7 @@ pipelines:
       - name: step2
         type: Bash
         configuration:
+          conditon: shashank_env==2
           inputSteps:
             - name: step1
         execution:
