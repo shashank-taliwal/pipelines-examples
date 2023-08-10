@@ -2,8 +2,8 @@ pipelines:
   - name: condition3
     configuration:
       environmentVariables:
-        shashank_env:
-          readOnly:
+        readOnly:
+          shashank_env:
             default: 2
             allowCustom: true
     steps:
@@ -11,8 +11,8 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            shashank_env:
-              readOnly: 
+            readOnly:
+              shashank_env: 
                 default: 3
                 allowCustom: true
           condition: 'shashank_env == 2'
