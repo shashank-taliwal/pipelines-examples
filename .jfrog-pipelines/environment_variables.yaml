@@ -5,7 +5,7 @@ pipelines:
         readOnly:
           pipeline_env:
             allowCustom: true
-            default: 4
+            default: 3
     steps:
       - name: step1
         type: Bash
@@ -13,8 +13,8 @@ pipelines:
           environmentVariables:
             step_env:
               allowCustom: true
-              default: 2
-          condition: step_env=='3'
+              default: 3
+          condition: 'step_env==3'
         execution:
           onExecute:
             - echo $pipeline_env
