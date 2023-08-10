@@ -1,6 +1,6 @@
 pipelines:
   - name: condition1
-    steps: 
+    steps:
       - name: step1
         type: Bash
         execution:
@@ -16,3 +16,4 @@ pipelines:
         execution:
           onExecute:
             - echo 'success'
+            - echo $var1
