@@ -22,9 +22,9 @@ pipelines:
       - name: step2
         type: Bash
         configuration:
-          conditon: 'shashank_env_1==2'
           inputSteps:
             - name: step1
+          conditon: 'shashank_env_1==2'
         execution:
           onExecute:
             - echo 'step2'
