@@ -1,0 +1,26 @@
+pipelines:
+  - name: condition4
+    configuration:
+      environmentVariables:
+        readOnly:
+          shashank_env:
+            default: 1
+            allowCustom: true
+    steps:
+      - name: step1
+        configuration:
+          environmentVariables:
+            readOnly:
+              shashank_env:
+                default: 2
+                allowCustom: true
+          condition: shashank_env == 3
+        execution:
+          onExecute:
+            - echo $shashank_env
+      - name: step2
+        configuration: 
+          condition: shashank_env == 2
+        execution:
+          onExecute:
+            - echo 'success'
