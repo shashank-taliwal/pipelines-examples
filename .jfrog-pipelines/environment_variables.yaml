@@ -14,7 +14,6 @@ pipelines:
             step_env:
               allowCustom: true
               default: 3
-          condition: pipeline_env==3
         execution:
           onExecute:
             - echo $pipeline_env
