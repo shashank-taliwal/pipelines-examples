@@ -8,6 +8,7 @@ pipelines:
             allowCustom: true
     steps:
       - name: step1
+        type: Bash
         configuration:
           environmentVariables:
             readOnly:
@@ -19,8 +20,11 @@ pipelines:
           onExecute:
             - echo $shashank_env
       - name: step2
+        type: Bash
         configuration: 
           condition: shashank_env == 2
+          inputSteps:
+            - name: step1
         execution:
           onExecute:
             - echo 'success'
