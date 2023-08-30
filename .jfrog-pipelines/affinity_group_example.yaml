@@ -1,0 +1,26 @@
+pipelines:
+  - name: simple_pipeline_with_three_Steps
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+          onExecute:
+            - echo 'step1'
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step1
+          affinityGroup: together
+        execution:
+          onExecute:
+            - echo 'step2'
+      - name: step3
+        type: Bash
+        configuration: 
+          inputSteps:
+            - name: step1
+          affinityGroup: together
+        execution:
+          onExecute:
+            - echo 'step3'
