@@ -1,0 +1,55 @@
+pipelines:
+    - name: S_Bash_3852_001_shashank
+      configuration:
+        environmentVariables:
+          readOnly:
+            pipevar1: 1
+            pipevar2: 2
+      steps:
+        - name: S_Bash_3852_001_1
+          type: Bash
+          configuration:
+            environmentVariables:
+              S_Bash_3852_001_1: "yes"
+            affinityGroup: 'group'
+          execution:
+            onExecute:
+              - if [ "$S_Bash_3852_001_1" != "yes" ]; then return 1; fi
+              - echo "done"
+        - name: S_Bash_3852_001_2
+          type: Bash
+          configuration:
+            environmentVariables:
+              S_Bash_3852_001_2: 'yes'
+            affinityGroup: 'group'
+            inputSteps:
+              - name: S_Bash_3852_001_1
+          execution:
+            onExecute:
+              - if [ "$S_Bash_3852_001_2" != "yes" ]; then return 1; fi
+              - echo "done"
+        - name: S_Bash_3852_001_3
+          type: Bash
+          configuration:
+            environmentVariables:
+              S_Bash_3852_001_3: 'yes'
+            affinityGroup: 'group'
+            inputSteps:
+              - name: S_Bash_3852_001_1
+          execution:
+            onExecute:
+              - if [ "$S_Bash_3852_001_3" != "yes" ]; then return 1; fi
+              - echo "done"
+        - name: S_Bash_3852_001_4
+          type: Bash
+          configuration:
+            environmentVariables:
+              S_Bash_3852_001_4: 'yes'
+            affinityGroup: 'group'
+            inputSteps:
+              - name: S_Bash_3852_001_2
+              - name: S_Bash_3852_001_3
+          execution:
+            onExecute:
+              - if [ "$S_Bash_3852_001_4" != "yes" ]; then return 1; fi
+              - echo "done"

@@ -1,11 +1,12 @@
 pipelines:
-  - name: simple_pipeline_with_three_Steps
+  - name: simple_pipeline_with_3_Steps
     steps:
       - name: step1
         type: Bash
         execution:
           onExecute:
             - echo 'step1'
+            - echo $step_name $step_node_id
       - name: step2
         type: Bash
         configuration:
@@ -14,6 +15,7 @@ pipelines:
         execution:
           onExecute:
             - echo 'step2'
+            - echo $step_name $step_node_id
       - name: step3
         type: Bash
         configuration: 
@@ -22,3 +24,4 @@ pipelines:
         execution:
           onExecute:
             - echo 'step3'
+            - echo $step_name $step_node_id

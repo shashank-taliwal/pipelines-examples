@@ -1,0 +1,29 @@
+pipelines:
+  - name: ApprovalGatesPipeline
+    configuration:
+      environmentVariables:
+        readOnly:
+          MY_MESSAGE: '"Hello World!"'
+    steps:
+      - name: step1ap1
+        type: Bash
+        configuration:
+          requiresApproval:
+            approvers:
+              - admin
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
+            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"      
+      - name: step2ap2
+        type: Bash
+        configuration:
+          inputSteps:
+           - name: step1ap1
+          requiresApproval:
+            approvers:
+              - admin
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
+            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"

@@ -1,0 +1,13 @@
+pipelines:
+  - name: building_maven
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+          onExecute:
+            - echo 'step1'
+            - echo $step_name $step_node_id
+            - git clone https://github.com/taylor-training/time-tracker.git
+            - cd time-tracker
+            - maven -X clean install
+            - echo "Successfully completed"

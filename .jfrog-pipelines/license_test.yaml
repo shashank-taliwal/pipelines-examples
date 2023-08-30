@@ -1,0 +1,9 @@
+pipelines:
+  - name: license_test
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+          onExecute:
+            - sleep 120
+            - echo 'step1'

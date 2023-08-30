@@ -1,12 +1,12 @@
 # pipelines:
-#   - name: Matrix_Single_Pipeline
+#   - name: Matrix_Mania
 #     steps:
-#       - name: matrix_example
+#       - name: Johny_Stepp
 #         type: Matrix
 #         stepMode: Bash
 #         configuration:
 #           concurrency: 5
-#           timeoutSeconds: 14400 
+#           timeoutSeconds: 14400
 #         stepletMultipliers:
 #           environmentVariables:
 #             - count: 1
@@ -151,5 +151,5 @@
 #         execution:
 #           onExecute:
 #             - echo "Executing matrix step on ${steplet_id}"
-#             - for i in {1..100}; do echo "hellohellohellohellohellohellohellohellohellohellohello" >> log.txt; done
+#             - for i in {1..1000000}; do echo "hellohellohellohellohellohellohellohellohellohellohello" >> log.txt; done
 #             - cat log.txt

@@ -1,0 +1,27 @@
+pipelines:
+  - name: complex2
+    configuration:
+      environmentVariables:
+        readOnly:
+          shashank_env_1:
+              default: 'false'
+              allowCustom: true
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+            onExecute:
+              - echo 'step1'
+              - add_run_variables "shashank_env_1='true'"
+              - echo $shashank_env_1
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step1
+          condition: "shashank_env_1=='true'"
+        execution:
+          onExecute:
+            - echo 'step2'
+            - echo $shashank_env_1
+        

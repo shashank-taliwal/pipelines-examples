@@ -1,0 +1,13 @@
+pipelines:
+  - name: building_frontend
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+          onExecute:
+            - echo 'step1'
+            - echo $step_name $step_node_id
+            - git clone https://github.com/shashank-taliwal/mvm-frontend.git
+            - cd mvm-frontend
+            - npm install --verbose
+            - echo "Successfully completed"

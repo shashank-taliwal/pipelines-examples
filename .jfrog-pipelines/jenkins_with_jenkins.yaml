@@ -1,0 +1,19 @@
+# pipelines: 
+#   - name: jenkins_with_jenkins
+#     steps:
+#       - name: jenkinsStep1
+#         type: Jenkins
+#         configuration:
+#           allowFailure: true 
+#           jenkinsJobName: testPipeline
+#           integrations:
+#             - name: jenkins_int
+#       - name: jenkinsStep2
+#         type: Jenkins
+#         configuration: 
+#           inputSteps:
+#             - name: jenkinsStep1
+#           jenkinsJobName: testPipeline
+#           integrations:
+#             - name: jenkins_int
+          

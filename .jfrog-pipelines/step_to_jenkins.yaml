@@ -1,0 +1,20 @@
+# pipelines: 
+#   - name: step_to_jenkins
+#     steps:
+#       - name: BashStep
+#         type: Bash
+#         configuration:
+#           allowFailure: true 
+#         execution:
+#           onExecute:
+#             - echo 'Success'
+#       - name: jenkinsStep
+#         type: Jenkins
+#         configuration: 
+#           allowFailure: true
+#           inputSteps:
+#             - name: BashStep
+#           jenkinsJobName: first
+#           integrations:
+#             - name: jenkins_int
+          

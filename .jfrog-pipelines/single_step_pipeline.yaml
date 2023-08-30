@@ -1,0 +1,14 @@
+pipelines:
+  - name: building_node_project
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+          onExecute:
+            - echo 'step1'
+            - echo $step_name $step_node_id
+            - git clone https://github.com/Lissy93/quick-example-of-testing-in-nodejs.git
+            - cd quick-example-of-testing-in-nodejs
+            - npm install --verbose
+            - npm run test
+            - echo "Successfully completed"
