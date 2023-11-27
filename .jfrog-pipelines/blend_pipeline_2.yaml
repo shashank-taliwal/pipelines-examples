@@ -63,7 +63,9 @@ pipelines:
         type: Jenkins
         configuration:
           inputSteps:
-            - name: approval_step2
+            - name: Step5
+            - name: Step6
+            - name: Step7
           jenkinsJobName: pipe_test
           integrations:
             - name: S_B_Jenkins
