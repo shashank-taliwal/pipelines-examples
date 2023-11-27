@@ -1,10 +1,10 @@
-pipelines: 
-  - name: jenkins_step
-    steps:
-      - name: jenkinsStep
-        type: Jenkins
-        configuration: 
-          jenkinsJobName: first
-          integrations:
-            - name: jenkins_int
+# pipelines: 
+#   - name: jenkins_step
+#     steps:
+#       - name: jenkinsStep
+#         type: Jenkins
+#         configuration: 
+#           jenkinsJobName: first
+#           integrations:
+#             - name: jenkins_int
           
