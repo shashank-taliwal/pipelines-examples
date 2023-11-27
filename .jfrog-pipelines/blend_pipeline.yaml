@@ -99,5 +99,5 @@ pipelines:
             - name: approval_step2
           jenkinsJobName: pipe_test
           integrations:
-            - name: jenkins_int
+            - name: S_B_Jenkins
           allowFailure: true
