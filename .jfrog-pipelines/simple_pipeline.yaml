@@ -20,7 +20,16 @@ pipelines:
         type: Bash
         configuration: 
           inputSteps:
-            - name: step1
+            - name: step2
+        execution:
+          onExecute:
+            - echo 'step3'
+            - echo $step_name $step_node_id
+      - name: step4
+        type: Bash
+        configuration: 
+          inputSteps:
+            - name: step3
         execution:
           onExecute:
             - echo 'step3'
