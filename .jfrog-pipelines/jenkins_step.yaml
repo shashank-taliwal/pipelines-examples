@@ -1,10 +1,10 @@
-pipelines: 
-  - name: jenkins_step
-    steps:
-      - name: jenkinsStep
-        type: Jenkins
-        configuration: 
-          jenkinsJobName: pipe_test
-          integrations:
-            - name: S_B_Jenkins
+# pipelines: 
+#   - name: jenkins_step
+#     steps:
+#       - name: jenkinsStep
+#         type: Jenkins
+#         configuration: 
+#           jenkinsJobName: pipe_test
+#           integrations:
+#             - name: S_B_Jenkins
           
