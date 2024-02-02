@@ -15,7 +15,7 @@ resources:
           key1: value1
           key2: value2
 pipelines:
-  - name: slack_test_4.yaml
+  - name: slack_test_4
     steps:
       - name: trigger_all
         configuration:
