@@ -44,7 +44,6 @@ pipelines:
             notifications:
               - integrationName: shashank_int
           timeoutSeconds: 1800
-          nodePool: ci_release
           inputSteps:
             - name: trigger_all
         execution:
