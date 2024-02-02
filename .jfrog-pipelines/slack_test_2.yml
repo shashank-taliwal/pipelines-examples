@@ -1,6 +1,6 @@
 pipelines:
-  - name: pipeline_slack_test_2
-  - steps:
+ - name: pipeline_slack_test_2
+ - steps:
     - name: trigger_all
       configuration:
         timeoutSeconds: 1800
