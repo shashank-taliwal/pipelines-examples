@@ -1,0 +1,78 @@
+resources:
+      - name: jfdev_ci_commons_ci_repositories_source_bitbucket
+        type: PropertyBag
+        configuration:
+          key1: value1
+          key2: value2
+      - name: jfdev_ci_commons_ci_toolbox_bitbucket
+        type: PropertyBag
+        configuration:
+          key1: value1
+          key2: value2
+      - name: jfdev_ci_commons_ci_repositories_create_target_bitbucket
+        type: PropertyBag
+        configuration:
+          key1: value1
+          key2: value2
+pipelines:
+  - name: slack_test_4.yaml
+    steps:
+      - name: trigger_all
+        configuration:
+          timeoutSeconds: 1800
+        type: Bash
+        execution:
+          onExecute:
+            - echo "Used solely to connect create and delete steps"
+      - name: repositories_actions_create
+        configuration:
+          priority: 1
+          timeoutSeconds: 1800
+          inputResources:
+            - name: jfdev_ci_commons_ci_repositories_source_bitbucket
+              trigger: false
+            - name: jfdev_ci_commons_ci_repositories_create_target_bitbucket
+              trigger: true
+          inputSteps:
+            - name: trigger_all
+        type: Bash
+        execution:
+            onStart:
+              - echo "started"
+            onExecute:
+              - echo "executing"
+            onFailure:
+              - echo "failed"
+            onSuccess:
+              - echo "succeeded"
+            onComplete:
+              - echo "completed"
+      - name: jfdev_ci_commons_bogus_build
+        type: Bash
+        configuration:
+          timeoutSeconds: 1800
+          inputResources:
+            - name: jfdev_ci_commons_ci_toolbox_bitbucket
+              trigger: false
+          inputSteps:
+            - name: trigger_all
+        execution:
+          onExecute:
+              - echo "executing"
+      - name: jfdev_ci_commons_recover_release
+        type: Bash
+        configuration:
+          requiresApproval:
+            approvers:
+              - admin
+            notifications:
+              - integrationName: shashank_int
+          timeoutSeconds: 1800
+          inputResources:
+            - name: jfdev_ci_commons_ci_toolbox_bitbucket
+              trigger: false
+          inputSteps:
+            - name: trigger_all
+        execution:
+          onExecute:
+            - echo "123"
