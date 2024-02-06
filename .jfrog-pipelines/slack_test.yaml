@@ -1,17 +1,17 @@
-# pipelines:
-#   - name: pipeline_slack_test
-#     steps:
-#       - name: step
-#         type: Bash
-#         configuration:
-#           integrations:
-#             - name: shashank_int
-#           requiresApproval:
-#             approvers:
-#               - admin
-#             notifications:
-#               - integrationName: shashank_int
-#           timeoutSeconds: 1800
-#         execution:
-#           onExecute:
-#             - echo "123"
+pipelines:
+  - name: pipeline_slack_test
+    steps:
+      - name: step
+        type: Bash
+        configuration:
+          integrations:
+            - name: shashank_int
+          requiresApproval:
+            approvers:
+              - admin
+            notifications:
+              - integrationName: shashank_int
+          timeoutSeconds: 1800
+        execution:
+          onExecute:
+            - echo "123"
