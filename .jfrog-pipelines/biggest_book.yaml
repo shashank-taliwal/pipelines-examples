@@ -1,5 +1,5 @@
 pipelines:
-  - name: biggest_book
+  - name: biggest_book_1
     steps:
       - name: step1
         type: Bash
